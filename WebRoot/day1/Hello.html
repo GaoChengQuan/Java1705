@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+  </head>
+  
+  <body>
+    <!-- 标题 -->
+    <h1>一级标题</h1>
+    <h2>二级标题</h2>
+    <h3 id="h3">三级标题</h3>
+    <h4>四级标题</h4>
+    <h5>五级标题</h5>
+    <h6>六级标题</h6>
+    <!-- p=paragraph 段落 -->
+    <p>王老师是教学总监和java讲师</p>
+    <p>朱老师是java讲师</p>
+    <!-- img 图片  
+    	alt:替代文字，页面没有加载出来显示的文字
+    	src:图片的路径，这里使用的是相对路径，".."表示上一级目录
+    -->
+    <img alt="加载失败" src="../images/baidu.png">
+    <img alt="加载失败" src="../images/baidu.png">
+    <img alt="加载失败" src="../images/baidu.png">
+    <img alt="加载失败" src="../images/baidu.png">
+    <!-- a 超链接  
+    	target="_blank"在新窗口打开
+    	title:悬停文字
+    -->
+    <a href="http://www.baidu.com" title="悬停文字" target="_blank">超链接文字</a>
+    <!-- 页面内的锚点使用id,跳转到指定锚点 -->
+    <a href="#h3">回到h3标题</a>
+    <a href="#">回到网页开始</a>
+    
+    <!-- 无序列表 ul=unordered list-->
+    <ul>
+    	<li>北京</li>
+    	<li>上海</li>
+    	<li>深圳</li>
+    	<li>广州</li>
+    </ul>
+    <!--有序列表 ol=ordered list  -->
+    <ol>
+    	<li>北京</li>
+    	<li>上海</li>
+    	<li>深圳</li>
+    	<li>广州</li>
+    </ol>
+    <!-- 无序列表和有序列表可以嵌套 -->
+    <ul>
+    	<li>北京</li>
+    	<li>
+    		山东
+    		<ol>
+    			<li>青岛</li>
+    			<li>济南</li>
+    			<li>烟台</li>
+    		</ol>
+    	</li>
+    	<li>深圳</li>
+    	<li>广州</li>
+    </ul>
+    
+    <!-- span u i b -->
+    <div>
+    	<u>山东省</u><i>青岛市</i><span style="color:red;">城阳区</span><b>春阳路</b>
+    </div>
+    
+    <!-- 空格折叠  &nbsp;
+    	普通的空格在 html 里如果连续的多个可能被认为只有一个,
+    	想显示多个空格需要&nbsp;
+    -->
+    <div>
+	          锄禾日当&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;午<br/>
+		汗滴禾下&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;土<br/>
+	          谁知盘中&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;餐<br/>
+	          粒粒皆辛&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;苦<br/>
+    </div>
+    
+    <!-- table -->
+    <table border="1" cellSpacing="0" width="500">
+    	<tr>
+    		<td>王老师</td>
+    		<td>朱老师</td>
+    	</tr>
+    	<tr>
+    		<td>高老师</td>
+    		<td>陈老师</td>
+    	</tr>
+    </table>
+    <br/>
+    <table border="1" cellSpacing="0" width="500">
+    	<tr>
+    		<td>王老师</td>
+    		<td>朱老师</td>
+    	</tr>
+    	<tr>
+    		<td colspan="2">高老师</td>
+    	</tr>
+    </table>
+    <br/>
+    <table border="1" cellSpacing="0" width="500">
+    	<tr>
+    		<td rowspan="2">王老师</td>
+    		<td>朱老师</td>
+    	</tr>
+    	<tr>
+    		<!-- <td>高老师</td> -->
+    		<td>陈老师</td>
+    	</tr>
+    </table>
+  </body>
+</html>
