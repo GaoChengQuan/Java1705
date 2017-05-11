@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Css.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+    	/*1、继承性：父元素可以控制子元素的的显示(颜色、字体)*/
+    	body {
+    		font-size : 20px;
+    	}
+    	div {
+    		color : red;
+    	}
+    	div {
+    		font-size : 10px;
+    	}
+    	
+    	#div2 {
+    		color : green;
+    	}
+    	
+    	.green {
+    		color : green;
+    	}
+    </style>
+  </head>
+  
+  <body>
+    <div>Css的样式</div>
+    <div id="div2" class="green">Css的样式</div>
+    <div>H1标签</div>
+    <h1 class="green">H1</h1>
+    
+    <p class="green">我是p标签</p>
+  </body>
+</html>
