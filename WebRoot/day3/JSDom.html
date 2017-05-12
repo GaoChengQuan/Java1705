@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JSDom.html</title>
+	
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+    	function clickMe() {
+    		console.log("Click Me!");
+    		alert("Click Me!");
+    		//document.getElementById(id属性值);
+    		var input1 = document.getElementById("input1");
+    		console.log(input1);
+    		console.log(input1.value);
+    		input1.value="Hello JS";
+    		//document.getElementsByTagName(tag标签名称);
+    		//标签可能有多个，这里其实返回的是一个数组
+    		var inputs = document.getElementsByTagName("input");
+    		console.log(inputs);
+    		//可以打印返回的标签数组指定位置的标签
+    		console.log(inputs[1]);
+    	}
+    </script>
+  </head>
+  <body>
+      <input id="input1" type="text" value="Hello"/>
+      <input type="button" value="clickMe" onClick="clickMe()"/>
+  </body>
+</html>
+
