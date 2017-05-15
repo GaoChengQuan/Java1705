@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>基本语法2.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script type="text/javascript">
+		// String方法
+		//1、大小写转换方法：
+		//x.toLowerCase();
+		//x.toUpperCase();
+		var str1 = "Hello jS!";
+		console.log(str1.toLowerCase());//hello js!
+		console.log(str1.toUpperCase());//HELLO JS!
+		
+		//2、x.charAt(index)      返回指定位置的字符
+		console.log(str1.charAt(6));//j
+		
+		//3、查询指定字符串
+		console.log(str1.indexOf("jS"));//6
+		console.log(str1.lastIndexOf("jS"));//6
+		
+		//split() 方法用于把一个字符串分割成字符串数组。
+		var str = "how are you doing today?";
+		var array = str.split(" ");
+		console.log(array);//["how", "are", "you", "doing", "today?"]
+		console.log(array[1]);//are
+		
+		console.log("2:4:5:6".split(":"));//["2", "4", "5", "6"]
+		console.log("2:4:5:6".split(":", 3));//["2", "4", "5"]
+	</script>
+  </head>
+  
+  <body>
+  	
+  </body>
+</html>

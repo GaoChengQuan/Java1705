@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Array.html</title>
+	
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script type="text/javascript">
+		var array = new Array(7);
+		console.log(array.length);
+		
+		var array1 = new Array(100,"a",true);
+		console.log(array1.length);
+		
+		//创建数组时候不知道放什么数据，就创建一个空数组
+		var array = new Array();
+		array.push("zhangsan");
+		console.log(array.length);
+		array.push(24);
+		console.log(array.length);
+		array.push(false);
+		console.log(array.length);
+		
+		console.log(array[1]);//24
+		console.log(array.pop());//false
+		
+		//数组的反转
+		var arr = [5, 23, 6, 0, 1];
+		arr.reverse();
+		console.log(arr);
+		//数组的排序
+		arr.sort();
+		console.log(arr);
+		
+		/* function fun(a, b){
+			return a - b;
+		}
+		
+		arr.sort(fun); */
+		//实现自己的比较方法，覆盖系统默认的比较方法
+		//fun函数值使用到了一次，可以直接写成匿名函数的形式
+		arr.sort(function(a, b) {
+			return a - b;
+		});
+		console.log(arr);
+		
+	</script>
+  </head>
+  
+  <body>
+    This is my HTML page. <br>
+  </body>
+</html>

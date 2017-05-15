@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>内置对象.html</title>
+	
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script type="text/javascript">
+		//Math
+		console.log(Math.round(3.56));//四舍五入
+		console.log(Math.floor(3.56));//floor地板意思，向下取整
+		console.log(Math.ceil(3.56));//ceil天花板，向上取整
+		
+		//Date
+		var date1 = new Date();
+		console.log(date1);//Mon May 15 2017 14:27:39 GMT+0800 (中国标准时间)
+		var date2 = new Date("2016/12/2 12:34:57");
+		console.log(date2);//Fri Dec 02 2016 12:34:57 GMT+0800 (中国标准时间)
+		
+		var year = date1.getFullYear();
+		var month = date1.getMonth();//month默认是从0开始的，所以要+1
+		var day = date1.getDate();
+		console.log(year + "年" + (month + 1) + "月" + day + "日");//2017年5月1日
+		
+		console.log(date1.toLocaleDateString());//2017/5/15
+		console.log(date1.toLocaleTimeString());//下午2:29:16
+		
+		//eval
+		eval("var x=10;var y=20;console.log(x*y)");//200
+		console.log(eval("2+3"));//5
+		
+	</script>
+  </head>
+  
+  <body>
+    This is my HTML page. <br>
+  </body>
+</html>

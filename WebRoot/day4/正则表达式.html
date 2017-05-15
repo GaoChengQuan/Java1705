@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>正则表达式.html</title>
+	
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script type="text/javascript">
+		//1、创建被匹配的信息内容
+		var str = "today is Monday";
+		//2、创建一个正则模式  /正则内容/
+		var reg = /Mon/;
+		//3、正则匹配
+		var result = str.match(reg);
+		console.log(result); 
+		
+		
+		//定义字符集-单次匹配
+        //[0-9]表示0到9之间任意"一个"数字
+		/* var reg = /[0-9]/;
+		var str = "2015-3-23";//["2"]
+		var str = "today is Monday 15:26";//["1"]
+		var result = str.match(reg);
+		console.log(result); */
+		
+		//[a-e]表示a到e这些字符中的某一个字符
+		/* var reg = /[a-e]/;
+		var str = "hello";//["e"]
+		var result = str.match(reg);
+		console.log(result); */
+		
+		/* var reg = /[A-E]/;
+		var str = "hEllo";//["E"]
+		var result = str.match(reg);
+		console.log(result); */
+		
+		//[a-zA-Z0-9_-]  大小写字母、数字、下环线、中横线 给随意匹配一个
+		/* var reg = /[a-zA-Z0-9_-]/;
+		var str = "%^&*!!!_Hello-JS";//["_"]
+		var result = str.match(reg);
+		console.log(result); */
+		
+		/* var reg = /[0-9]+/;
+		var str = "2017-05-15";
+		var result = str.match(reg);
+		console.log(result);  */
+		
+		//特别字符集
+        //+  : 其前面那个单元出现1次或以上
+		/* var reg = /[0-9]+/;
+		var str = "hello2-34";//["2"]
+		var result = str.match(reg);
+		console.log(result);  */
+		
+		//*  : 其前面那个单元出现0次或以上（任意次数）
+		/* var reg = /go*gle/;
+		var str = "goooooooooooooogle";//["goooooooooooooogle"]
+		var str = "gogle";//["gogle"]
+		var str = "ggle";//["ggle"]
+		var result = str.match(reg);
+		console.log(result); */
+		
+		//?  : 其前面那个单元出现0次或1次
+		/* var reg = /wo?rld/;
+		var str = "wrld";//["wrld"]
+		var str = "world";//["world"]
+		var str = "woorld";//null
+		var result = str.match(reg);
+		console.log(result); */
+		
+		//.  : 匹配除换行符 \n之外的任何单字符  .*
+		//var reg = /.*/;
+		/* var str = "^&*%*&%*(*)-090HGUSADGsds\n^&^&*%*sdfhf";//["^&*%*&%*(*)-090HGUSADGsds"]
+		var result = str.match(reg);
+		console.log(result); */
+		
+		//|  : 指明两项之间的一个选择
+		/* var reg = /milk|fish/;
+		var str = "cat like eat fish and milk";//["fish"]
+		var result = str.match(reg);
+		console.log(result); */
+		
+		//\  : 这个符号是用来转义的
+        //     把符号的特殊意思给去除，只保留最本质的意思  \.
+		/* var reg = /[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/;
+		var str = "192.168.33.4";//["192.168.33.4"]
+		var result = str.match(reg);
+		console.log(result); */
+		
+		//$  : 匹配输入字符串的"结尾"位置。
+        //^  : 匹配输入字符串的"开始"位置
+		/* var reg = /^banana/;//banana出现在目标字符串的开始位置  null
+		var reg = /^monkey/;//["monkey"]
+		var reg = /banana$/;//["banana"] banana出现在目标字符串的结尾位置
+		var reg = /like$/;//null
+		var str = "monkey like banana";
+		var result = str.match(reg);
+		console.log(result); */
+		
+		//以下代码是"部分匹配"，手机号码也会被匹配到(实际手机号码格式不正确)
+		/* var reg = /13[0-9]{9}/;
+		var str = "13121212121java";//["13121212121java"] */
+		//解决：
+        //^和$符号作用体现：被匹配内容必须是13开始，还得是数字结尾，整体内容是一个11位的数字信息
+        //^和$ 限制对被匹配内容进行“完整匹配”
+		var reg = /^13[0-9]{9}$/;
+		var str = "13121212121";//["13121212121"]
+		var result = str.match(reg);
+		console.log(result);
+		
+		
+		//模式修正符
+        //i------>忽略大小写
+        /* var reg = /[a-z]+/i;
+        var str = "helloBEIJING";//helloBEIJING */
+
+        //g----->全局匹配global
+        //如果进行全局匹配，没有“模式单元()”的体现
+        /* var reg = /[0-9]+/g;
+        var str = "2015-03-23 17:30:20";//["2015", "03", "23", "17", "30", "20"] */
+
+    
+		
+		
+		//组合字符
+		//\d:表示0-9之间任意一个数字[0-9]
+		/* var reg = /\d+/g;
+		var str = "2017/05/15";//["2017", "05", "15"]
+		var result = str.match(reg);
+		console.log(result); */
+		
+		//\D:表示非数字之一[^0-9]
+		/* var reg = /\D+/g;
+		var str = "this is java1705^&*^";//["this is java", "^&*^"]
+		var result = str.match(reg);
+		console.log(result); */
+		
+		//\w:表示字母、数字、下划线其中一个[a-zA-Z0-9_]
+		// \W非字母、数字、下划线
+		/* var reg = /\w+/g;
+		var str = "_dhfu2018@gmail.com";//["_dhfu2018", "gmail", "com"]
+		var result = str.match(reg);
+		console.log(result); */
+		
+		// \s:表示空格
+		//\S表示非空格
+		/* var reg = /\w+\s{6}\w+/;
+		var str = "hello      beijing";//["hello      beijing"]
+		var result = str.match(reg);
+		console.log(result); */
+		
+		// \b:表示单词的边界
+		/* var reg = /\bis\b/;
+		var str = "this is a bread";
+		var newStr = str.replace(reg, "was");//this was a bread
+		console.log(newStr); */
+		
+		// \B表示非单词边界
+		var reg = /\Bis\b/;
+		var str = "hi is this a book";
+		var newStr = str.replace(reg, "at");//hi is that a book
+		console.log(newStr);
+		
+	</script>
+  </head>
+  
+  <body>
+  </body>
+</html>

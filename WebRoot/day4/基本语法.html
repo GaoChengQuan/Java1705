@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>基本语法.html</title>
+	
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<!-- 3、文件调用方式：在单独的js文件中写js 
+		需要引入到网页上才能使用
+		1)该标签必须写成双标签，哪怕没有内容
+		2)该标签不能即引入js有写js
+	-->
+	<script src="../js/situ.js"></script>
+    <script type="text/javascript">
+    	//1.JS不区分单引号和双引号。
+  		var str1 = "Hello JS! ";
+  		console.log(str1);
+  		var str2 = 'Hello JS!';
+  		console.log(str2);
+  		var str3 = "Hello 'Java'  JS! ";
+  		console.log(str3);
+  		
+  		function fun1() {
+  			alert("Hello JS!");
+  		}
+  		
+  		
+  		// null/undefined
+  		//console.log(num);
+  		var num1;//没有赋值
+  		console.log(num1);//undefined
+  		num1 = 3;
+  		console.log(num1);//3
+		num1 = null;
+  		console.log(num1);//null
+  		
+  		// typeof()判断变量的类型
+  		var str;
+  		//js里面没有初始化的变量则自动取值为undefined，
+  		console.log(typeof(str));//undefined
+  		str = "Hello";
+  		//变量所应用的数据是有类型的。
+  		console.log(typeof(str));//string
+  		var num = 9;
+  		console.log(typeof(num));//number
+		
+		
+		// ===
+		var m = "3";
+		var n = 3;
+		if (m == n) {
+			console.log("m==n");//值相同，会打印
+		}
+		if (m === n) {
+			console.log("m===n");//类型不同，不会打印
+		}
+		var t = 3;
+		if (n === t) {
+			console.log("n===t");
+		}
+		
+		//Boolean
+		var num5 = 4;
+		if (num5) {
+			console.log(num5);//4
+		}
+    </script>
+  </head>
+  
+  <body>
+  	<!-- 1、在定义事件的时候直接写js -->
+  	<input type="button" value="按钮1" onclick="alert('Hello JS!');"/>
+  	<!-- 2、 -->
+  	<input type="button" value="按钮2" onclick="fun1();"/>
+  	<!-- 3、 -->
+  	<input type="button" value="按钮3" onclick="fun2();"/>
+  </body>
+</html>
