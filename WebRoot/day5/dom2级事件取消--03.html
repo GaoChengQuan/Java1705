@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>新建网页</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript">
+        	function f1(){
+				console.log(111111);
+			}
+			
+			function f2(){
+				console.log(222222);
+			}
+			
+			function f3(){
+				console.log(333333);
+			}
+       		//事件取消要求：
+			function cancel(){
+				var dv = document.getElementsByTagName('div')[0];
+			    dv.removeEventListener('mouseover',f2);
+			}
+			
+        	window.onload = function() {
+	        	
+				//dom2级事件设置简单使用
+				var dv = document.getElementsByTagName('div')[0];
+				//dv.addEventListener('click',处理 有名/匿名函数);
+				dv.addEventListener('onclick',function(){
+				    //this 代表div的元素节点对象
+				    dv.style.backgroundColor = "pink";
+				    this.style.width = "400px";
+				});
+				
+				//为同一个div对象设置多个mouseover事件
+				dv.addEventListener('mouseover',f1);
+				dv.addEventListener('mouseover',f2);
+				dv.addEventListener('mouseover',f3);
+        	}
+        </script>
+    </head>
+    <body>
+        <h2>dom2级事件取消</h2>
+        <div style="width:300px; height:200px; background-color:lightblue;">事件操作</div>
+        <input type="button" value="取消" onclick="cancel();"/>
+    </body>
+</html>
