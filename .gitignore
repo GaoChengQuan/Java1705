@@ -11,8 +11,6 @@ out/
 *.iml
 
 # Eclipse
-.classpath
-.project
 .settings/
 .metadata/
 
