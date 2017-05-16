@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>02--文本节点的获取.html</title>
+	
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script type="text/javascript">
+		window.onload = function() {
+			//childNodes、nextSibling、previousSibling、firstChild、lastChild
+			var ull = document.getElementsByTagName('ul')[0];
+			console.log(ull.childNodes);//NodeList[<TextNode textContent="\n ">, li, <TextNode textContent="\n ">, li, <TextNode textContent="\n ">, li, <TextNode textContent="\n ">]
+			//集合/数组.length;  获得元素个数
+			console.log(ull.childNodes.length);//7
+			
+			console.log(ull.firstChild);//<TextNode textContent="\n ">
+			console.log(ull.firstChild.nextSibling);//<li>red</li>
+			
+			console.log(ull.lastChild);//<TextNode textContent="\n ">
+			console.log(ull.lastChild.previousSibling);//<li>green</li>
+		}
+	</script>
+  </head>
+  
+  <body>
+    <ul>
+       <li>red</li>
+       <li>blue</li>
+       <li>green</li>
+    </ul>
+  </body>
+</html>

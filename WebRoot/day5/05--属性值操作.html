@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>02--文本节点的获取.html</title>
+	
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script type="text/javascript">
+		window.onload = function() {
+			var baidu = document.getElementsByTagName('a')[0];
+			//① 获得属性的信息
+			console.log(baidu.href);
+			console.log(baidu.target);
+			console.log(baidu.className);//apple /className是class的一个别名，不可以直接访问class属性
+			console.log(baidu.addr);//undefined
+			console.log(baidu.getAttribute('href'));//
+			console.log(baidu.getAttribute('addr'));//
+			console.log(baidu.getAttribute('target'));//
+		}
+		
+		//② 设置属性的信息
+		function f1(){
+		    baidu.href = "http://www.163.com";
+		    baidu.target = "_self";
+		    baidu.addr = "tianjin";
+		    //属性修改 有就更新、没有就创建
+		    baidu.setAttribute('addr','shanghai');
+		    baidu.setAttribute('height','170');//新创建
+		}
+	</script>
+  </head>
+  
+  <body>
+  	 <h2>属性值操作</h2>
+     <a href="http://www.baidu.com"  addr='beijing' target="_blank" class="apple">百度</a><br />
+     <input type="button" value="修改属性" onclick="f1()" /><br />
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>02--文本节点的获取.html</title>
+	
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script type="text/javascript">
+		window.onload = function() {
+			var blue = document.getElementsByTagName('li')[1];
+			var fu_blue = blue.cloneNode(true);//深层复制(本身和内部子节点都复制)
+			var fu_blue = blue.cloneNode(false);//浅层复制(本身(包括属性)节点给复制)
+
+			//把复制的fu_blue追加到第二个ul里边
+			var second_ul = document.getElementsByTagName('ul')[1];
+			second_ul.appendChild(fu_blue);
+		}
+		
+	</script>
+  </head>
+  
+  <body>
+  	 <h2>节点复制追加</h2>
+     <ul>
+         <li mean="热情">red</li>
+         <li mean="冷静">blue</li>
+         <li mean="生机">green</li>
+     </ul>
+     <ul>
+         <li mean="饿">orange</li>
+     </ul>
+  </body>
+</html>

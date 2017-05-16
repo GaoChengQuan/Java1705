@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>01--获取元素节点.html</title>
+	
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script type="text/javascript">
+	
+		window.onload = function() {
+			//① document.getElementById();  id属性值获得元素节点  
+			var name = document.getElementById("userName");
+			console.log(name);
+			var email = document.getElementById("userEmail");
+			console.log(email);
+			
+			//通过 getElementsByTagName 收集的元素节点以"集合/数组"(即时只有一个节点)的形式返回
+			var inputs = document.getElementsByTagName('input');
+			console.log(inputs);
+			console.log(inputs[1]);//访问具体节点<input type="text" id="userEmail" value="gao@163.com"/>
+			
+		}
+	</script>
+  </head>
+  
+  <body>
+  	<input type="text" id="userName" value="gao"/> <br>
+  	<input type="text" id="userEmail" value="gao@163.com"/><br/>
+  </body>
+</html>
