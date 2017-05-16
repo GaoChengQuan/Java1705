@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>表单正则验证.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+    	.ok {
+    		color : black;
+    	}
+    	.error {
+    		color : red;
+    	}
+    </style>
+    <script type="text/javascript">
+    	//验证账号的格式
+    	function checkAccount() {
+    		//获取账号
+    		var account = document.getElementById("account").value;
+    		//获取span
+    		var span = document.getElementById("account_msg");
+    		//判断账号格式
+    		var reg = /^\w{5,10}$/;
+    		if(reg.test(account)) {
+    			//格式对了，变绿
+    			span.className = "ok";
+    			return true;
+    		} else {
+    			//格式错了，变红
+    			span.className = "error";
+    			return false;
+    		}
+    	}
+    	function checkPwd() {
+    		var pwd = document.getElementById("pwd").value;
+    		var span = document.getElementById("pwd_msg");
+    		//判断账号格式
+    		var reg = /^\w{10,20}$/;
+    		if(reg.test(pwd)) {
+    			//格式对了，变绿
+    			span.className = "ok";
+    			return true;
+    		} else {
+    			//格式错了，变红
+    			span.className = "error";
+    			return false;
+    		}
+    	}
+    </script>
+  </head>
+  <body>
+  	<!-- 如果像两个都不填都变红 onsubmit="return checkAccount() + checkPwd() == 2;"-->
+  	<!-- 如果像两个都不填都变红 onsubmit="return checkAccount() && checkPwd()"-->
+  	<form action="www.baidu.com"  onsubmit="return checkAccount() + checkPwd() == 2;">
+  		<div>
+  			账号：<input type="text" id="account" onblur="checkAccount();"/>
+  			<span id="account_msg">5-10位字母、数字、下划线</span>
+  		</div>
+  		<div>
+  			密码：<input type="password" id="pwd" onblur="checkPwd();"/>
+  			<span id="pwd_msg">10-20位字母、数字、下划线</span>
+  		</div>
+  		<div>
+  			<input type="submit" value="登陆"/>
+  		</div>
+  	</form>
+  </body>
+</html>
