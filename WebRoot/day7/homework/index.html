@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../day6/js/jquery-1.11.1.js" ></script>
+		<script type="text/javascript">
+			function big() {
+				//1.获得原始的宽和高
+				var oldWidth = $("img").width();
+				var oldHeigth = $("img").height();
+				//2.计算放大后的宽高
+				//原宽/原高 = 新宽/新高;
+            	//新高 = (新宽*原高)/原宽;
+				var newWidth = oldWidth + 5;
+				var newHeigth = (newWidth * oldHeigth) / oldWidth; 
+				//3.设置新的宽和高
+				$("img").width(newWidth);
+				$("img").height(newHeigth);
+			}
+			
+			function small() {
+				//1.获得原始的宽和高
+				var oldWidth = $("img").width();
+				var oldHeigth = $("img").height();
+				//2.计算放大后的宽高
+				//原宽/原高 = 新宽/新高;
+            	//新高 = (新宽*原高)/原宽;
+				var newWidth = oldWidth - 5;
+				var newHeigth = (newWidth * oldHeigth) / oldWidth; 
+				//3.设置新的宽和高
+				$("img").width(newWidth);
+				$("img").height(newHeigth);
+			}
+		</script>
+	</head>
+	<body>
+		<img src="dog.jpg" />
+		<div>
+			<input type="button" value="放大" onclick="big();"/>
+			<input type="button" value="缩小" onclick="small();"/>
+		</div>
+	</body>
+</html>

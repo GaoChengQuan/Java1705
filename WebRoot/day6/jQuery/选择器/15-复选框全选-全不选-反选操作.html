@@ -13,11 +13,13 @@
         function selAll(){
             //全选
             // $('li').css('color','red'); //css()方法内部有遍历机制，会为每个li设置样式
-            $('.hby').attr('checked',true);//attr()方法内部有遍历机制，会为每个复选框设置选中
+            //$('.hby').attr('checked',true);//attr()方法内部有遍历机制，会为每个复选框设置选中
+             $(".hby").prop("checked", true);
         }
         function selNotAll(){
             //全不选
-            $('.hby').attr('checked',false);
+            //$('.hby').attr('checked',false);
+            $(".hby").prop("checked", false);
         }
         function selFan(){
             //反选
@@ -25,8 +27,8 @@
             //$('.hby')
             for(var i=0; i<$('.hby').length; i++){
                 //判断当前复选框选中情况
-                var flag = $('.hby:eq('+i+')').attr('checked');
-                $('.hby:eq('+i+')').attr('checked',!flag);
+                var flag = $('.hby:eq('+i+')').prop('checked');
+                $('.hby:eq('+i+')').prop('checked',!flag);
             }
         }
         </script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.div0, p {
+				border: 1px solid red;
+				width: 400px;
+			}
+			.div1,.div2,.div3 {
+				width: 100px;
+				height: 100px;
+				margin: 10px;
+			}
+			.div1 {
+				background-color: #F00;
+			}
+			.div2 {
+				background-color: #0F0;
+			}
+			.div3 {
+				background-color: #00F;
+			}
+			
+			.div1,.div2,.div3 {
+				float: left;
+			}
+			/*消除对浮动的影响，在哪个元素上clear就不受浮动的影响，
+			 会出现在浮动元素的下方*/
+			/*p{
+				clear: left;
+			}*/
+			.div4 {
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div0">
+			<div class="div1"></div>
+			<div class="div2"></div>
+			<div class="div3"></div>
+			<div class="div4"></div>
+		</div>
+		<p>浮动时看看我的位置</p>
+	</body>
+</html>

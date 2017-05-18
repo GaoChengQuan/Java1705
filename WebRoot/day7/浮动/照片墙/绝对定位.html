@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				border: 3px solid #ccc;
+				width: 300px;
+				margin : 30px auto;
+				/*只设置position不设置偏移量，目的是为了让他成为子元素
+				 绝对定位的目标，并非让他真的偏移*/
+				position: relative;				
+			}
+			p {
+				position: absolute;
+				width: 300px;
+				background-color: #FFF;
+				text-align: center;
+				/*以带了position的div为目标*/
+				bottom: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img src="images/01.jpg" />
+			<p>Java开发深入讲解</p>
+		</div>
+	</body>
+</html>
