@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.wrap {
+				width: 330px;
+				height: 30px;
+				margin: 100px auto;
+				background-image: url(images/bg.jpg);
+				/*显示出圆角来，防止a的背景把圆角切了*/
+				padding-left:10px ;
+			}
+			ul {
+				list-style-type: none;
+			}
+			.wrap li {
+				float: left;
+				width: 100px;
+				height: 30px;
+				margin-right: 10px;
+				/*position: relative;*/
+			}
+			.wrap a {
+				color: black;
+				text-decoration: none;
+				display: block;
+				width: 100px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+				background-image: url(images/libg.jpg);
+			}
+			.wrap li ul {
+				/*position: absolute;*/
+				display: none;
+			}
+		</style>
+		<script src="../../js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function() {
+				/*所有的后代leave的时候都消失，如果是a则不会消失在二级lileaver时候*/
+				$(".wrap li").mouseenter(function() {
+					$(this).children("ul").show();
+				});
+				$(".wrap li").mouseleave(function() {
+					$(this).children("ul").hide();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<!--ul>(li>a{一级菜单$})*3-->
+		<ul class="wrap">
+			<li>
+				<a href="#">一级菜单1</a>
+				<ul>
+					<li><a href="#">二级菜单1</a></li>
+					<li><a href="#">二级菜单2</a></li>
+					<li><a href="#">二级菜单3</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">一级菜单2</a>
+				<ul>
+					<li><a href="#">二级菜单1</a></li>
+					<li><a href="#">二级菜单2</a></li>
+					<li><a href="#">二级菜单3</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">一级菜单3</a>
+				<ul>
+					<li><a href="#">二级菜单1</a></li>
+					<li><a href="#">二级菜单2</a></li>
+					<li><a href="#">二级菜单3</a></li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+</html>
