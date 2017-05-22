@@ -4,45 +4,40 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<style type="text/css">
-			* {
+			*{
 				margin: 0;
 				padding: 0;
+			}
+			ul {
+				list-style: none;
 			}
 			.wrap {
 				width: 330px;
 				height: 30px;
-				margin: 100px auto;
+				margin: 50px auto;
 				background-image: url(images/bg.jpg);
 				/*显示出圆角来，防止a的背景把圆角切了*/
-				padding-left:10px ;
-			}
-			ul {
-				list-style-type: none;
+				padding-left: 10px;
 			}
 			.wrap li {
 				float: left;
-				width: 100px;
 				height: 30px;
+				width: 100px;
 				margin-right: 10px;
-				/*position: relative;*/
+				line-height: 30px;
+				text-align: center;
+				background-image: url(images/libg.jpg);
 			}
 			.wrap a {
 				color: black;
 				text-decoration: none;
-				display: block;
-				width: 100px;
-				height: 30px;
-				text-align: center;
-				line-height: 30px;
-				background-image: url(images/libg.jpg);
 			}
 			.wrap li ul {
-				/*position: absolute;*/
 				display: none;
 			}
 		</style>
 		<script src="../../js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
-		<script>
+		<script type="text/javascript">
 			$(function() {
 				/*所有的后代leave的时候都消失，如果是a则不会消失在二级lileaver时候*/
 				$(".wrap li").mouseenter(function() {
@@ -58,27 +53,27 @@
 		<!--ul>(li>a{一级菜单$})*3-->
 		<ul class="wrap">
 			<li>
-				<a href="#">一级菜单1</a>
+				<a href="">一级标题1</a>
 				<ul>
-					<li><a href="#">二级菜单1</a></li>
-					<li><a href="#">二级菜单2</a></li>
-					<li><a href="#">二级菜单3</a></li>
+					<li><a href="">二级标题1</a></li>
+					<li><a href="">二级标题2</a></li>
+					<li><a href="">二级标题3</a></li>
 				</ul>
 			</li>
 			<li>
-				<a href="#">一级菜单2</a>
+				<a href="">一级标题2</a>
 				<ul>
-					<li><a href="#">二级菜单1</a></li>
-					<li><a href="#">二级菜单2</a></li>
-					<li><a href="#">二级菜单3</a></li>
+					<li><a href="">二级标题1</a></li>
+					<li><a href="">二级标题2</a></li>
+					<li><a href="">二级标题3</a></li>
 				</ul>
 			</li>
 			<li>
-				<a href="#">一级菜单3</a>
+				<a href="">一级标题3</a>
 				<ul>
-					<li><a href="#">二级菜单1</a></li>
-					<li><a href="#">二级菜单2</a></li>
-					<li><a href="#">二级菜单3</a></li>
+					<li><a href="">二级标题1</a></li>
+					<li><a href="">二级标题2</a></li>
+					<li><a href="">二级标题3</a></li>
 				</ul>
 			</li>
 		</ul>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				border: 1px solid red;
+				width: 520px;
+				height: 280px;
+				margin: 50px auto;
+			}
+			.show {
+				display: inline-block;
+			}
+			.hide {
+				display: none;
+			}
+		</style>
+		<script src="../../js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				start();
+			});
+			var id;
+			var count = 1;
+			//轮播
+			function start() {
+				//启动定时器
+				id = setInterval(function(){
+					//获取所有的图片
+					var imgs = $('img');
+					//将所有图片隐藏
+					for(var i = 0; i < imgs.length; i++) {
+						imgs[i].className = "hide";
+					}
+					//将下一张图片显示
+					var index = count % imgs.length;
+					imgs[index].className = "show";
+					count++;
+				}, 2000);
+			}
+			function stop() {
+				clearInterval(id);
+			}
+		</script>
+	</head>
+	<body>
+		<!--hover不是事件，是伪类选择器,onmouseover是鼠标悬停事件，onmouseout是鼠标离开事件-->
+		<div onmousemove="stop();" onmouseout="start();">
+			<img src="images/1.jpg"/>
+			<img src="images/2.jpg" class="hide"/>
+			<img src="images/3.jpg" class="hide"/>
+			<img src="images/4.jpg" class="hide"/>
+			<img src="images/5.jpg" class="hide"/>
+		</div>
+	</body>
+</html>
