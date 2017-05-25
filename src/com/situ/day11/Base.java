@@ -36,6 +36,11 @@ public class Base {
 		short s2 = 34;
 		//Type mismatch: cannot convert from int to short
 		//short s = s1 + s2; 
+		
+		//从大到小需要强制类型转换，可能会丢失精度。
+		double d = 3.14;
+		int num = (int)d;
+		System.out.println(num);//3
 	}
 	
 	/**
