@@ -1,6 +1,5 @@
 package com.situ.day12;
 
-import org.junit.Test;
 
 public class FunctionDemo {
 	public static void main(String[] args) {
