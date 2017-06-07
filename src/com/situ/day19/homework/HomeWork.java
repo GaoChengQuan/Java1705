@@ -51,9 +51,12 @@ public class HomeWork {
 	public void test1() {
 		int[] arrA = new int[]{1, 7, 9, 11, 13, 15, 17, 19};
 		int[] arrB = new int[]{2, 4, 6, 8, 10};
+		//0 0 0 0 0 0 0 0 0 0 0 0 0 
 		int[] newArr = new int[arrA.length + arrB.length];
 		
+		//1 7 9 11 13 15 17 19 0 0 0 0 0 
 		System.arraycopy(arrA, 0, newArr, 0, arrA.length);
+		//1 7 9 11 13 15 17 19 2 4 6 8 10 
 		System.arraycopy(arrB, 0, newArr, arrA.length, arrB.length);
 		
 		Arrays.sort(newArr);

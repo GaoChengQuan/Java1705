@@ -1,4 +1,4 @@
-package com.situ.day19;
+package com.situ.day18;
 
 //The type FinalExtend cannot subclass the final class FinalClass
 public class FinalExtend extends FinalClass{

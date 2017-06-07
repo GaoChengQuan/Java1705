@@ -1,4 +1,4 @@
-package com.situ.day19;
+package com.situ.day18;
 
 public abstract class AbstractAnimal {
 	protected String name;
