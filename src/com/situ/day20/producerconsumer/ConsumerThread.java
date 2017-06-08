@@ -14,7 +14,7 @@ public class ConsumerThread extends Thread{
 	public void run() {
 		for (int i = 1; i <= 1000; i++) {
 			Cake cake = panzi.getCake();
-			System.out.println(Thread.currentThread().getName() + " getCake " + cake);
+			System.out.println(Thread.currentThread().getName() + cake);
 			try {
 				Thread.sleep(new Random().nextInt(5000));
 			} catch (InterruptedException e) {

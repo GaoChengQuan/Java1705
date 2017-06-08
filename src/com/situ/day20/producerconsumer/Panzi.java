@@ -6,9 +6,9 @@ public class Panzi {
 	private LinkedList<Cake> linkedList = new LinkedList<Cake>();
 	
 	public synchronized void putCake(Cake cake) {
-		linkedList.addLast(cake);
-		notifyAll();
+		linkedList.addLast(cake);//linkedList.add(cake);
 		System.out.println("putCake notifyAll");
+		notifyAll();
 	}
 	
 	public synchronized Cake getCake() {

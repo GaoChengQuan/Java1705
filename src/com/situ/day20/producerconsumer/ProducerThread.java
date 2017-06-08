@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class ProducerThread extends Thread{
 	private Panzi panzi;
-
+	
 	public ProducerThread(String name, Panzi panzi) {
 		super(name);
 		this.panzi = panzi;
@@ -13,8 +13,8 @@ public class ProducerThread extends Thread{
 	@Override
 	public void run() {
 		for (int i = 1; i <= 1000; i++) {
-			Cake cake = new Cake("no:" + i);
-			System.out.println(Thread.currentThread().getName() + " putCake " + cake);
+			Cake cake = new Cake("no: " + i);
+			System.out.println(Thread.currentThread().getName() + cake);
 			panzi.putCake(cake);
 			try {
 				Thread.sleep(new Random().nextInt(5000));
@@ -23,4 +23,5 @@ public class ProducerThread extends Thread{
 			}
 		}
 	}
+	
 }
