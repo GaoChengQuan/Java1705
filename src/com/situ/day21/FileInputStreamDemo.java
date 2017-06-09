@@ -14,39 +14,39 @@ public class FileInputStreamDemo {
 	 * 复制一个图片
 	 */
 	@Test
-	public void fileInputStreamCopy() {
-		InputStream inputStream = null;
-		OutputStream outputStream = null;
-		
-		try {
-			inputStream = new FileInputStream("111.png");
-			outputStream = new FileOutputStream("222.png");
-			byte[] buffer = new byte[1024];
-			int length = 0;
-			while ((length = inputStream.read(buffer)) != -1) {
-				outputStream.write(buffer, 0, length);
+public void fileInputStreamCopy() {
+	InputStream inputStream = null;
+	OutputStream outputStream = null;
+	
+	try {
+		inputStream = new FileInputStream("111.png");
+		outputStream = new FileOutputStream("222.png");
+		byte[] buffer = new byte[1024];
+		int length = 0;
+		while ((length = inputStream.read(buffer)) != -1) {
+			outputStream.write(buffer, 0, length);
+		}
+	} catch (FileNotFoundException e) {
+		e.printStackTrace();
+	} catch (IOException e) {
+		e.printStackTrace();
+	} finally {
+		if (outputStream != null) {
+			try {
+				outputStream.close();
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			if (outputStream != null) {
-				try {
-					outputStream.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-			if (inputStream != null) {
-				try {
-					inputStream.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+		}
+		if (inputStream != null) {
+			try {
+				inputStream.close();
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
 		}
 	}
+}
 	
 	
 	
