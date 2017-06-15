@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DBUtil {
+public class JdbcUtil {
 	static {
 		// 1、加载驱动 Class.forName("");
 		try {

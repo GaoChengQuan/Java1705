@@ -24,7 +24,7 @@ public class JDBCDemo {
 		Connection connection = null;
 		Statement statement = null;
 		try {
-			connection = DBUtil.getConnection();
+			connection = JdbcUtil.getConnection();
 			// 3、写sql语句
 			String sql = "CREATE TABLE teacher(id INT PRIMARY KEY AUTO_INCREMENT,NAME VARCHAR(10));";
 			// 4、创建Statement
@@ -37,7 +37,7 @@ public class JDBCDemo {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DBUtil.close(connection, statement);
+			JdbcUtil.close(connection, statement);
 		}
 	}
 
@@ -48,7 +48,7 @@ public class JDBCDemo {
 		Statement statement = null;
 		ResultSet resultSet = null;
 		try {
-			connection = DBUtil.getConnection();
+			connection = JdbcUtil.getConnection();
 			// 3、写sql语句
 			String stuName = "张三";
 			//String sql = "SELECT * FROM student WHERE NAME='" + stuName + "';";
@@ -70,7 +70,7 @@ public class JDBCDemo {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DBUtil.close(connection, statement, resultSet);
+			JdbcUtil.close(connection, statement, resultSet);
 		}
 	}
 }
